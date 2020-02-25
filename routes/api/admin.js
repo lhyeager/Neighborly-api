@@ -6,9 +6,9 @@ const database        = require('knex')(configuration);
 
 router.get('/users', (req, res) => {
     database('users').select().then((results)=>{
-        res.status(200).json(results)
+        return res.status(200).json(results)
     }).catch((err) => {
-        res.status(500).json({error: "database error"})
+        return res.status(500).json({error: "database error"})
     })
 })
   
